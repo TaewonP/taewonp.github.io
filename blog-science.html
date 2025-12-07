@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Blog | Taewon Park</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #8C1515;
+            --text-color: #333;
+            --bg-color: #fcfcfc;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0; padding: 0;
+        }
+        .navbar {
+            background-color: #fff;
+            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+            position: sticky; top: 0; z-index: 1000;
+        }
+        .nav-container {
+            max-width: 900px; margin: 0 auto; padding: 0 20px;
+            display: flex; justify-content: center; gap: 30px;
+        }
+        .nav-link {
+            text-decoration: none; color: #555; font-weight: 600;
+            padding: 5px 10px; border-bottom: 2px solid transparent;
+            transition: color 0.3s;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color); border-bottom: 2px solid var(--primary-color);
+        }
+        .container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+        
+        /* Blog Styles */
+        .post-preview { margin-bottom: 40px; border-bottom: 1px solid #eee; padding-bottom: 30px; }
+        .post-title { margin-bottom: 5px; color: #111; }
+        .post-meta { font-size: 0.9rem; color: #777; margin-bottom: 15px; }
+        .read-more { color: var(--primary-color); text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="cv.html" class="nav-link">CV</a>
+            <a href="blog-science.html" class="nav-link active">Science Blog</a>
+            <a href="blog-personal.html" class="nav-link">Personal Blog</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Science & Engineering Blog</h1>
+        <p>Thoughts on photonics, quantum systems, and research.</p>
+        <hr style="border:0; border-top: 1px solid #eee; margin: 30px 0;">
+
+        <!-- Example Post Entry -->
+        <div class="post-preview">
+            <h2 class="post-title">Coming Soon: Thoughts on TFLN Scaling</h2>
+            <div class="post-meta">Posted on December 7, 2025</div>
+            <p>
+                I will be updating this section with discussions on the challenges of scaling thin-film lithium niobate devices for quantum networking...
+            </p>
+        </div>
+
+    </div>
+</body>
+</html>

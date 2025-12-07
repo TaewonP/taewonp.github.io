@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV | Taewon Park</title>
+    <title>Taewon Park | Stanford University</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary-color: #8C1515; /* Stanford Red */
             --text-color: #333;
-            --bg-color: #f9f9f9;
+            --bg-color: #fcfcfc;
+            --accent-color: #f4f4f4;
         }
 
         body {
@@ -22,357 +23,161 @@
         }
 
         .container {
-            max-width: 850px;
-            margin: 40px auto;
-            padding: 40px;
-            background: white;
-            box-shadow: 0 0 15px rgba(0,0,0,0.05);
-            min-height: 100vh;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
         }
 
-        /* CV Header */
-        .cv-header {
-            text-align: center;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 20px;
-            margin-bottom: 30px;
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-bottom: 60px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 40px;
         }
 
-        .cv-header h1 {
-            margin: 0;
-            font-size: 2.2rem;
-            color: #000;
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        .cv-header p {
-            margin: 5px 0;
+        .hero-text h1 {
+            font-size: 2.8rem;
+            margin: 0 0 10px 0;
+            color: #111;
+        }
+
+        .hero-text h2 {
+            font-size: 1.2rem;
+            font-weight: 400;
             color: #555;
+            margin: 0 0 20px 0;
         }
 
-        .back-btn {
-            display: inline-block;
-            margin-bottom: 20px;
+        .social-links a {
             color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-right: 20px;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover { color: #500000; }
+
+        /* Content Sections */
+        h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+
+        .btn-cv {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 25px;
             text-decoration: none;
+            border-radius: 5px;
             font-weight: bold;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+
+        .btn-cv:hover { background-color: #600e0e; }
+
+        .news-item {
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 3px solid #ddd;
         }
         
-        .back-btn:hover { text-decoration: underline; }
-
-        /* Sections */
-        h2 {
-            color: var(--primary-color);
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 5px;
-            margin-top: 40px;
-            font-size: 1.4rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .entry {
-            margin-bottom: 15px;
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .date-col {
-            flex: 0 0 120px;
+        .news-date {
             font-weight: bold;
+            font-size: 0.9rem;
             color: #666;
-            font-size: 0.95rem;
         }
 
-        .content-col {
-            flex: 1;
-        }
-
-        .institution {
-            font-weight: bold;
-            color: #000;
-        }
-
-        .location {
-            font-style: italic;
-            color: #666;
-            float: right;
-        }
-
-        .details {
-            display: block;
-            color: #444;
-            margin-top: 2px;
-        }
-
-        ul.dashed {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        ul.dashed li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 5px;
-        }
-        ul.dashed li:before {
-            content: "-";
-            position: absolute;
-            left: 0;
-        }
-
-        /* Publications List */
-        ol.pub-list {
-            padding-left: 20px;
-        }
-        ol.pub-list li {
-            margin-bottom: 15px;
-            color: #444;
-        }
-        .my-name {
-            font-weight: bold;
-            color: #000;
-            text-decoration: underline;
-        }
-        .paper-title {
-            font-style: italic;
-            color: #222;
-        }
-
-        /* Print Styles */
-        @media print {
-            body { background: white; }
-            .container { box-shadow: none; margin: 0; padding: 0; max-width: 100%; }
-            .back-btn { display: none; }
-            a { text-decoration: none; color: black; }
-        }
-
-        @media (max-width: 600px) {
-            .entry { flex-direction: column; }
-            .location { float: none; display: block; }
-            .date-col { margin-bottom: 5px; }
+        @media (max-width: 768px) {
+            .hero { flex-direction: column; text-align: center; }
+            .profile-img { width: 200px; height: 200px; }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Home</a>
-
-        <header class="cv-header">
-            <h1>Taewon Park</h1>
-            <p>PhD Candidate · Electrical Engineering · Stanford University</p>
-            <p>twpark@stanford.edu</p>
-            <p><strong>Research Interests:</strong> Integrated photonics, quantum optics, quantum sensing</p>
-        </header>
-
-        <!-- Education -->
-        <section>
-            <h2>Education</h2>
+        
+        <!-- Hero Section -->
+        <div class="hero">
+            <!-- Ensure you upload a photo named 'profile.jpg' -->
+            <img src="profile.jpg" alt="Taewon Park" class="profile-img">
             
-            <div class="entry">
-                <div class="date-col">2020.9 – Present</div>
-                <div class="content-col">
-                    <div class="institution">Stanford University <span class="location">Stanford, CA, USA</span></div>
-                    <div class="details">PhD in Electrical Engineering</div>
-                    <div class="details">Advisor: Amir Safavi-Naeini (Applied Physics Department)</div>
+            <div class="hero-text">
+                <h1>Taewon Park</h1>
+                <h2>PhD Candidate in Electrical Engineering<br>Stanford University</h2>
+                
+                <div class="social-links">
+                    <a href="mailto:twpark@stanford.edu"><i class="fas fa-envelope"></i></a>
+                    <a href="https://scholar.google.com/citations?user=5C_wbnMAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+                    <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
                 </div>
-            </div>
 
-            <div class="entry">
-                <div class="date-col">2024.6</div>
-                <div class="content-col">
-                    <div class="institution">Stanford University <span class="location">Stanford, CA, USA</span></div>
-                    <div class="details">MS in Electrical Engineering</div>
-                </div>
+                <a href="cv.html" class="btn-cv">View Full CV <i class="fas fa-arrow-right"></i></a>
             </div>
+        </div>
 
-            <div class="entry">
-                <div class="date-col">2013.3 – 2020.2</div>
-                <div class="content-col">
-                    <div class="institution">Korea Advanced Institute of Science and Technology (KAIST) <span class="location">Daejeon, South Korea</span></div>
-                    <div class="details">BS in Electrical Engineering</div>
-                    <div class="details">Advanced Major Program | Graduation with honors</div>
-                    <div class="details">Undergraduate research advisor: Kyoungsik Yu</div>
-                </div>
-            </div>
+        <!-- About Section -->
+        <section>
+            <h3>About Me</h3>
+            <p>
+                I am a PhD Candidate in the <strong><a href="https://safavi-naeini.stanford.edu/" target="_blank" style="color:var(--primary-color); text-decoration:none;">Safavi-Naeini Group</a></strong> at Stanford University. My research lies at the intersection of <strong>integrated photonics, quantum optics, and nonlinear optics</strong>.
+            </p>
+            <p>
+                I focus on developing high-performance photonic integrated circuits (PICs) using thin-film lithium niobate (TFLN). My work aims to bridge the gap between classical and quantum information processing by creating scalable, on-chip devices for squeezed light generation, quantum sensing, and optical computing.
+            </p>
         </section>
 
-        <!-- Experience & Awards -->
+        <!-- Research Interests -->
         <section>
-            <h2>Professional Experience and Awards</h2>
-            <ul class="dashed">
-                <li><strong>2025:</strong> Best poster award (runner-up), DARPA INSPIRED program PI meeting</li>
-                <li><strong>2020-2021:</strong> Stanford Department Fellowship, Stanford University</li>
-                <li><strong>2020:</strong> Research Assistant, Department of Physics, Seoul National University (Advisor: Dohun Kim)</li>
-                <li><strong>2020:</strong> Incubic/Milton Chang Travel Grant for CLEO 2020, CLEO</li>
-                <li><strong>2020:</strong> Fulbright Graduate Study Award, Declined</li>
-                <li><strong>2020:</strong> Graduation with Honors, KAIST</li>
-                <li><strong>2019:</strong> Research Excellence Award for SPIE Optics+Photonics Conference, Sponsor: MKS Instruments</li>
-                <li><strong>2019:</strong> Excellent Award for Undergraduate Research Program, KAIST</li>
-                <li><strong>2019:</strong> Dean’s List for Outstanding GPA, KAIST</li>
-                <li><strong>2018-2019:</strong> Undergraduate Research Assistant, Electrical Engineering, KAIST (Advisor: Kyoungsik Yu)</li>
-                <li><strong>2018, 2019:</strong> Undergraduate Research Program Scholarship, KAIST</li>
-                <li><strong>2018:</strong> Undergraduate Research Student, Electrical Engineering, KAIST (Advisor: Hyunjoo Jenny Lee)</li>
-                <li><strong>2013-2018:</strong> KAIST Scholarship (Merit-based scholarship for 7 semesters), Korea Student Aid Foundation</li>
+            <h3>Research Interests</h3>
+            <ul style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; padding-left: 20px;">
+                <li>Integrated Photonics</li>
+                <li>Quantum Optics & Sensing</li>
+                <li>Nonlinear Optics</li>
+                <li>Thin-film Lithium Niobate (TFLN)</li>
+                <li>Optical Computing</li>
             </ul>
         </section>
 
-        <!-- Publications -->
+        <!-- Recent News -->
         <section>
-            <h2>Journal Publications</h2>
-            <ol class="pub-list">
-                <li>
-                    <span class="my-name">Taewon Park</span>, Hubert S Stokowski, Ansari, Vahid, McKenna, Timothy P, Hwang, Alexander Y, Celik, Oguz Tolga, Martin M Fejer, Safavi-Naeini, Amir H. 
-                    <span class="paper-title">“Single-mode squeezed-light generation and tomography with an integrated optical parametric oscillator.”</span> 
-                    Science Advances 10(11), eadl1814 (2024).
-                </li>
-                <li>
-                    <span class="my-name">Taewon Park*</span>, Hubert S Stokowski, Vahid Ansari, Timothy P McKenna, Alexander Y Hwang, Martin M Fejer, Amir H Safavi-Naeini*. 
-                    <span class="paper-title">“High-efficiency second harmonic generation of blue light on thin-film lithium niobate.”</span> 
-                    Optics Letters 47(11), 2706-2709 (2022).
-                </li>
-                <li>
-                    <span class="my-name">Taewon Park</span>, Youngjae Jeong, Kyoungsik Yu*. 
-                    <span class="paper-title">“Cascaded optical resonator-based programmable photonic integrated circuits.”</span> 
-                    Optics Express 29(3), 4645-4660 (2021).
-                </li>
-                <li>
-                    Sunil Pai, Zhanghao Sun, Tyler W Hughes, <span class="my-name">Taewon Park</span>, Ben Bartlett, Ian A D Williamson, Momchil Minkov, Maziyar Milanizadeh, Nathnael Abebe, Francesco Morichetti, and others. 
-                    <span class="paper-title">“Experimentally realized in situ backpropagation for deep learning in photonic neural networks.”</span> 
-                    Science 380(6643), 398-404 (2023).
-                </li>
-                <li>
-                    Hubert S Stokowski, Devin J Dean, Alexander Y Hwang, <span class="my-name">Taewon Park</span>, Oguz Tolga Celik, Timothy P McKenna, Marc Jankowski, Carsten Langrock, Vahid Ansari, Martin M Fejer, Amir H Safavi-Naeini*. 
-                    <span class="paper-title">“Integrated frequency-modulated optical parametric oscillator.”</span> 
-                    Nature 627(8002), 95-100 (2024).
-                </li>
-                <li>
-                    Sunil Pai, <span class="my-name">Taewon Park</span>, Marshall Ball, Bogdan Penkovsky, Michael Dubrovsky, Nathnael Abebe, Maziyar Milanizadeh, Francesco Morichetti, Andrea Melloni, Shanhui Fan, Olav Solgaard, David AB Miller. 
-                    <span class="paper-title">“Experimental evaluation of digitally verifiable photonic computing for blockchain and cryptocurrency.”</span> 
-                    Optica 10(5), 552-560 (2023).
-                </li>
-                <li>
-                    Hubert S Stokowski, Timothy P McKenna, <span class="my-name">Taewon Park</span>, Alexander Y Hwang, Devin J Dean, Oguz Tolga Celik, Vahid Ansari, Martin M Fejer, Amir H Safavi-Naeini*. 
-                    <span class="paper-title">“Integrated quantum optical phase sensor in thin film lithium niobate.”</span> 
-                    Nature Communications 14(1), 3355 (2023).
-                </li>
-                <li>
-                    Alexander Y Hwang, Hubert S Stokowski, <span class="my-name">Taewon Park</span>, Marc Jankowski, Timothy P McKenna, Carsten Langrock, Jatadhari Mishra, Vahid Ansari, Martin M Fejer, Amir H Safavi-Naeini. 
-                    <span class="paper-title">“Mid-infrared spectroscopy with a broadly tunable thin-film lithium niobate optical parametric oscillator.”</span> 
-                    Optica 10(11), 1535-1542 (2023).
-                </li>
-                <li>
-                    Sunil Pai, Carson Valdez, <span class="my-name">Taewon Park</span>, Maziyar Milanizadeh, Francesco Morichetti, Andrea Melloni, Shanhui Fan, Olav Solgaard, David AB Miller. 
-                    <span class="paper-title">“Power monitoring in a feedforward photonic network using two output detectors.”</span> 
-                    Nanophotonics 12(5), 985-991 (2023).
-                </li>
-                <li>
-                    Oguz Tolga Celik, Nancy Yousry Ammar, <span class="my-name">Taewon Park</span>, Hubert S Stokowski, Kevin KS Multani, Alexander Y Hwang, Samuel Gyger, Yudan Guo, Martin M Fejer, Amir H Safavi-Naeini. 
-                    <span class="paper-title">“Roles of temperature, materials, and domain inversion in high-performance, low-bias-drift thin film lithium niobate blue light modulators.”</span> 
-                    Optics Express 32(21), 36160-36170 (2024).
-                </li>
-            </ol>
-        </section>
+            <h3>Recent News</h3>
+            
+            <div class="news-item">
+                <div class="news-date">Sep 2025</div>
+                <div>Paper "Low-power integrated optical parametric amplification via second-harmonic resonance" accepted in <strong>Nature</strong>.</div>
+            </div>
 
-        <!-- Conference Papers (Items 11-28 from CV) -->
-        <section>
-            <h2>Conference Papers & Proceedings</h2>
-            <ol class="pub-list" start="11">
-                <li>
-                    <span class="my-name">Taewon Park</span>, et al. “Squeezed light generation and analysis using a sub-threshold optical parametric oscillator on integrated thin-film lithium niobate photonic circuit.” <em>CLEO: Science and Innovations</em>, SF1K-7 (2023).
-                </li>
-                <li>
-                    <span class="my-name">Taewon Park</span>, et al. “Second harmonic generation of blue light on integrated thin-film lithium niobate waveguides.” <em>CLEO</em>, 1-2 (2022).
-                </li>
-                <li>
-                    <span class="my-name">Taewon Park</span>, Youngjae Jeong, Kyoungsik Yu*. “Construction of a Multi-Wavelength Unitary Operator via Cascaded Optical Resonators.” <em>CLEO: QELS Fundamental Science</em> JTh2B-5 (2020).
-                </li>
-                <li>
-                    Sunil Pai, <span class="my-name">Taewon Park</span>, et al. “Lighthash: Experimental evaluation of a photonic cryptocurrency.” <em>CLEO</em>, 1-2 (2022).
-                </li>
-                <li>
-                    Sunil Pai, Tyler W Hughes, <span class="my-name">Taewon Park</span>, et al. “Inference and Gradient Measurement for Backpropagation in Photonic Neural Networks.” <em>CLEO</em>, 1-2 (2022).
-                </li>
-                <li>
-                    Hubert S Stokowski, ... <span class="my-name">Taewon Park</span>, et al. “Optical Frequency Comb via Electro-Optically Locked Parametric Oscillator in Thin Film Lithium Niobate.” <em>Nonlinear Optics</em>, Tu1A-5 (2023).
-                </li>
-                <li>
-                    Devin J Dean, <span class="my-name">Taewon Park</span>, et al. “Efficient Second Harmonic Resonant Nonlinear Device in Thin-Film Lithium Niobate.” <em>Nonlinear Optics</em>, W2B-6 (2023).
-                </li>
-                <li>
-                    Alexander Y Hwang, ... <span class="my-name">Taewon Park</span>, et al. “Integrated Lithium Niobate OPO for Tunable Mid-IR Spectroscopy.” <em>Nonlinear Optics</em>, W2B-7 (2023).
-                </li>
-                <li>
-                    (Abstract) Hope Lee, ... <span class="my-name">Taewon Park</span>, et al. “Heterogenous Integration of Diamond and Lithium Niobate Nanophotonics for Quantum Networks.” <em>APS March Meeting Abstracts</em> (2023).
-                </li>
-                <li>
-                    Hubert S Stokowski, ... <span class="my-name">Taewon Park</span>, et al. “Quantum-Enhanced Phase Detection in a Lithium Niobate Photonic Integrated Circuit.” <em>CLEO: Fundamental Science</em>, FF2L-3 (2023).
-                </li>
-                <li>
-                    Luke Qi, ... <span class="my-name">Taewon Park</span>, et al. “Cryogenic Visible-to-Infrared Quantum Interface in a Lithium Niobate Photonic Circuit.” <em>CLEO: Applications and Technology</em>, JTu2A-94 (2023).
-                </li>
-                <li>
-                    Hope Lee, ... <span class="my-name">Taewon Park</span>, et al. “Heterogeneous Integration of SiV-Centers in Diamond with Lithium Niobate Photonics for Quantum Networks.” <em>CLEO</em>, 1-2 (2023).
-                </li>
-                <li>
-                    Alexander Y Hwang, ... <span class="my-name">Taewon Park</span>, et al. “Singly-Resonant Mid-IR Optical Parametric Oscillator in Lithium Niobate Nanophotonics.” <em>CLEO</em>, 1-2 (2023).
-                </li>
-                <li>
-                    Oguz Tolga Celik, ... <span class="my-name">Taewon Park</span>, et al. “Visible electro-optic modulator array in thin-film lithium Niobate for atomic qubit control.” <em>Frontiers in Optics</em>, FM5B-2 (2023).
-                </li>
-                <li>
-                    Isaac Luntadila Lufungula, ... <span class="my-name">Taewon Park</span>, et al. “Tunable dual wavelength laser on thin film lithium niobate.” <em>2023 IEEE Photonics Conference (IPC)</em>, 1-2 (2023).
-                </li>
-                <li>
-                    Oguz Tolga Celik, ... <span class="my-name">Taewon Park</span>, et al. “Bias-stable Sub-Volt Visible Electro-optic Modulator in Thin-Film Lithium Niobate.” <em>2023 IEEE Photonics Conference (IPC)</em>, 1-2 (2023).
-                </li>
-                <li>
-                    Hubert S Stokowski, ... <span class="my-name">Taewon Park</span>, et al. “Frequency-Modulated Optical Parametric Oscillator in Thin Film Lithium Niobate.” <em>CLEO: Science and Innovations</em>, STh3I-2 (2024).
-                </li>
-                <li>
-                    Alexander Y Hwang, ... <span class="my-name">Taewon Park</span>, et al. “Integrated Optical Parametric Oscillators for Mid-Infrared Spectroscopy.” <em>Optical Sensors</em>, STh1C-2 (2024).
-                </li>
-            </ol>
-        </section>
+            <div class="news-item">
+                <div class="news-date">Aug 2025</div>
+                <div>Won <strong>Best Poster Award (Runner-up)</strong> at the DARPA INSPIRED program PI meeting.</div>
+            </div>
 
-        <!-- Presentations -->
-        <section>
-            <h2>Selected Presentations</h2>
-            <div class="entry">
-                <div class="date-col">Aug 2025</div>
-                <div class="content-col">
-                    <strong>Nonlinear optics conference (Hawaii)</strong><br>
-                    “Integrated Optical Parametric Oscillator Squeezer on Thin-Film Lithium Niobate”
-                </div>
-            </div>
-            <div class="entry">
-                <div class="date-col">July 2024</div>
-                <div class="content-col">
-                    <strong>(Invited) Workshop on Quantum Light Generation, JILA</strong><br>
-                    “Single-mode squeezed-light generation and tomography with an integrated optical parametric oscillator”
-                </div>
-            </div>
-            <div class="entry">
-                <div class="date-col">Aug 2024</div>
-                <div class="content-col">
-                    <strong>NTT Coherent Ising Machine (CIM) consortium (Virtual)</strong><br>
-                    “Towards Integrated Quantum Squeezed Light Sensor”
-                </div>
-            </div>
-            <div class="entry">
-                <div class="date-col">July 2023</div>
-                <div class="content-col">
-                    <strong>Gordon Research Conference - Quantum Sensing (Switzerland)</strong><br>
-                    “Squeezed light from a photonic integrated circuit”
-                </div>
+            <div class="news-item">
+                <div class="news-date">Mar 2024</div>
+                <div>Paper "Single-mode squeezed-light generation..." published in <strong>Science Advances</strong>.</div>
             </div>
         </section>
 
-        <!-- Reviewer Activity -->
-        <section>
-            <h2>Service</h2>
-            <p><strong>Reviewer for:</strong> Nature Publishing Journal (NPJ) Nanophotonics, Nanophotonics, Scientific Reports, Optics Letters.</p>
-            <p><strong>In the Media:</strong> Featured in Optics & Photonics News (OPTICA) and Stanford News.</p>
-        </section>
+        <footer style="margin-top: 60px; text-align: center; font-size: 0.85rem; color: #888;">
+            &copy; 2025 Taewon Park.
+        </footer>
 
     </div>
 

@@ -10,6 +10,7 @@
             --primary-color: #8C1515; /* Stanford Red */
             --text-color: #333;
             --bg-color: #fcfcfc;
+            --nav-bg: #fff;
         }
 
         body {
@@ -19,6 +20,41 @@
             background-color: var(--bg-color);
             margin: 0;
             padding: 0;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: var(--nav-bg);
+            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .nav-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #555;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 5px 10px;
+            transition: color 0.3s, border-bottom 0.3s;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
         }
 
         .container {
@@ -35,6 +71,7 @@
             margin-bottom: 60px;
             border-bottom: 1px solid #eee;
             padding-bottom: 40px;
+            padding-top: 20px;
         }
 
         .profile-img {
@@ -104,16 +141,26 @@
         @media (max-width: 768px) {
             .hero { flex-direction: column; text-align: center; }
             .profile-img { width: 200px; height: 200px; }
+            .nav-container { flex-wrap: wrap; gap: 15px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-link active">Home</a>
+            <a href="cv.html" class="nav-link">CV</a>
+            <a href="blog-science.html" class="nav-link">Science Blog</a>
+            <a href="blog-personal.html" class="nav-link">Personal Blog</a>
+        </div>
+    </nav>
+
     <div class="container">
         
         <!-- Hero Section -->
         <div class="hero">
-            <!-- Ensure you upload a photo named 'profile.jpg' -->
             <img src="profile.jpg" alt="Taewon Park" class="profile-img">
             
             <div class="hero-text">
@@ -123,7 +170,7 @@
                 <div class="social-links">
                     <a href="mailto:twpark@stanford.edu"><i class="fas fa-envelope"></i></a>
                     <a href="https://scholar.google.com/citations?user=5C_wbnMAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i></a>
-                    <a href="linkedin.com/in/taewon-park-4353001a0" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
                 </div>
 
                 <a href="cv.html" class="btn-cv">View Full CV <i class="fas fa-arrow-right"></i></a>
@@ -134,7 +181,7 @@
         <section>
             <h3>About Me</h3>
             <p>
-                Welcome! I am a PhD Candidate in the <strong><a href="https://linqs.stanford.edu/" target="_blank" style="color:var(--primary-color); text-decoration:none;">Safavi-Naeini Group</a></strong> at Stanford University. My research lies at the intersection of <strong>integrated photonics, quantum optics, and nonlinear optics</strong>.
+                I am a PhD Candidate in the <strong><a href="https://safavi-naeini.stanford.edu/" target="_blank" style="color:var(--primary-color); text-decoration:none;">Safavi-Naeini Group</a></strong> at Stanford University. My research lies at the intersection of <strong>integrated photonics, quantum optics, and nonlinear optics</strong>.
             </p>
             <p>
                 I focus on developing high-performance photonic integrated circuits (PICs) using thin-film lithium niobate (TFLN). My work aims to create scalable quantum and optical systems for squeezed light generation and quantum sensing.

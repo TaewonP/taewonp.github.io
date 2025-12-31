@@ -3,211 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taewon Park | Stanford University</title>
+    <title>Taewon Park | Stanford</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --primary-color: #8C1515; /* Stanford Red */
-            --text-color: #333;
-            --bg-color: #fcfcfc;
-            --nav-bg: #fff;
-        }
-
-        body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Navigation Bar */
-        .navbar {
-            background-color: var(--nav-bg);
-            border-bottom: 1px solid #eee;
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
-        }
-
-        .nav-container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-        }
-
-        .nav-link {
-            text-decoration: none;
-            color: #555;
-            font-weight: 600;
-            font-size: 1rem;
-            padding: 5px 10px;
-            transition: color 0.3s, border-bottom 0.3s;
-            border-bottom: 2px solid transparent;
-        }
-
-        .nav-link:hover, .nav-link.active {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--primary-color);
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        /* Hero Section */
-        .hero {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-            margin-bottom: 60px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 40px;
-            padding-top: 20px;
-        }
-
-        .profile-img {
-            width: 250px;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 50%;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        .hero-text h1 {
-            font-size: 2.8rem;
-            margin: 0 0 10px 0;
-            color: #111;
-        }
-
-        .hero-text h2 {
-            font-size: 1.2rem;
-            font-weight: 400;
-            color: #555;
-            margin: 0 0 20px 0;
-        }
-
-        .social-links a {
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            margin-right: 20px;
-            transition: color 0.3s;
-        }
-
-        .social-links a:hover { color: #500000; }
-
-        h3 {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            border-bottom: 2px solid #f0f0f0;
-            padding-bottom: 10px;
-            margin-top: 40px;
-        }
-
-        .news-item {
-            margin-bottom: 15px;
-            padding-left: 15px;
-            border-left: 3px solid #ddd;
-        }
-        
-        .news-date {
-            font-weight: bold;
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        @media (max-width: 768px) {
-            .hero { flex-direction: column; text-align: center; }
-            .profile-img { width: 200px; height: 200px; }
-            .nav-container { flex-wrap: wrap; gap: 15px; }
-        }
+        :root { --primary: #8C1515; --text: #2d2d2d; --muted: #666; --bg: #ffffff; --border: rgba(0,0,0,0.08); }
+        body { font-family: 'Inter', sans-serif; line-height: 1.7; color: var(--text); background: var(--bg); margin: 0; -webkit-font-smoothing: antialiased; }
+        .navbar { background: rgba(255,255,255,0.9); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); padding: 20px 0; position: sticky; top: 0; z-index: 1000; }
+        .nav-container { max-width: 900px; margin: 0 auto; padding: 0 30px; display: flex; justify-content: space-between; align-items: center; }
+        .nav-brand { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.3rem; text-decoration: none; color: var(--text); }
+        .nav-link { text-decoration: none; color: var(--muted); font-weight: 500; font-size: 0.95rem; margin-left: 25px; transition: 0.2s; }
+        .nav-link:hover, .nav-link.active { color: var(--primary); }
+        .container { max-width: 900px; margin: 0 auto; padding: 60px 30px; }
+        .hero { display: grid; grid-template-columns: 240px 1fr; gap: 60px; align-items: start; margin-bottom: 80px; }
+        .profile-img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .hero-text h1 { font-family: 'Playfair Display', serif; font-size: 3.2rem; margin: 0 0 10px; letter-spacing: -0.5px; }
+        .hero-text h2 { font-size: 1.1rem; font-weight: 500; color: var(--muted); margin-bottom: 25px; line-height: 1.5; }
+        .social-links { display: flex; gap: 20px; }
+        .social-links a { color: var(--muted); font-size: 1.3rem; transition: 0.2s; }
+        .social-links a:hover { color: var(--primary); transform: translateY(-2px); }
+        h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin: 60px 0 25px; position: relative; }
+        h3::after { content: ''; display: block; width: 35px; height: 2px; background: var(--primary); margin-top: 10px; }
+        .news-item { display: grid; grid-template-columns: 100px 1fr; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #f5f5f5; }
+        .news-date { font-weight: 600; font-size: 0.8rem; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; }
+        footer { margin-top: 100px; padding: 40px 0; border-top: 1px solid var(--border); text-align: center; color: var(--muted); font-size: 0.9rem; }
+        @media (max-width: 768px) { .hero { grid-template-columns: 1fr; text-align: center; } .profile-img { width: 180px; margin: 0 auto; } .social-links { justify-content: center; } .nav-container { flex-direction: column; gap: 15px; } }
     </style>
 </head>
 <body>
-
-    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="nav-link active">Home</a>
-            <a href="cv.html" class="nav-link">CV</a>
-            <a href="blog-science.html" class="nav-link">Science Blog</a>
-            <a href="blog-personal.html" class="nav-link">Personal Blog</a>
+            <a href="index.html" class="nav-brand">Taewon Park</a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="cv.html" class="nav-link">CV</a>
+                <a href="blog-science.html" class="nav-link">Science</a>
+                <a href="blog-personal.html" class="nav-link">Personal</a>
+            </div>
         </div>
     </nav>
-
     <div class="container">
-        
-        <!-- Hero Section -->
         <div class="hero">
-            <!-- PHOTO INSTRUCTION: This line looks for 'profile.jpg' in your repository -->
             <img src="profile.jpg" alt="Taewon Park" class="profile-img">
-            
             <div class="hero-text">
                 <h1>Taewon Park</h1>
                 <h2>PhD Candidate in Electrical Engineering<br>Stanford University</h2>
-                
                 <div class="social-links">
                     <a href="mailto:twpark@stanford.edu"><i class="fas fa-envelope"></i></a>
-                    <a href="https://scholar.google.com/citations?user=5C_wbnMAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i></a>
-                    <a href="https://www.linkedin.com/in/taewon-park-4353001a0" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://scholar.google.com" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+                    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
         </div>
-
-        <!-- About Section -->
         <section>
             <h3>About Me</h3>
-            <p>
-                I am a PhD Candidate in the <strong><a href="https://linqs.stanford.edu//" target="_blank" style="color:var(--primary-color); text-decoration:none;">Safavi-Naeini Group</a></strong> at Stanford University. My research lies at the intersection of <strong>integrated photonics, quantum optics, and nonlinear optics</strong>.
-            </p>
-            <p>
-                I focus on developing high-performance photonic integrated circuits (PICs) using thin-film lithium niobate (TFLN). My work aims to create scalable quantum and optical systems for squeezed light generation and quantum sensing.
-            </p>
+            <p>I am a PhD Candidate in the <strong>Safavi-Naeini Group</strong> at Stanford. My research focuses on developing high-performance photonic integrated circuits (PICs) using thin-film lithium niobate for quantum sensing and squeezed light generation.</p>
         </section>
-
-        <!-- Research Interests -->
-        <section>
-            <h3>Research Interests</h3>
-            <ul style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; padding-left: 20px;">
-                <li>Integrated Photonics</li>
-                <li>Quantum Optics & Sensing</li>
-                <li>Nonlinear Optics</li>
-            </ul>
-        </section>
-
-        <!-- Recent News -->
         <section>
             <h3>Recent News</h3>
-            
-            <div class="news-item">
-                <div class="news-date">Sep 2025</div>
-                <div>Paper "Low-power integrated optical parametric amplification via second-harmonic resonance" accepted in <strong>Nature</strong>.</div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-date">Aug 2025</div>
-                <div>Won <strong>Best Poster Award (Runner-up)</strong> at the DARPA INSPIRED program PI meeting.</div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-date">Mar 2024</div>
-                <div>Paper "Single-mode squeezed-light generation..." published in <strong>Science Advances</strong>.</div>
-            </div>
+            <div class="news-item"><span class="news-date">Sep 2025</span><div>Paper on optical parametric amplification accepted in <strong>Nature</strong>.</div></div>
+            <div class="news-item"><span class="news-date">Aug 2025</span><div>Won <strong>Best Poster Award</strong> at the DARPA INSPIRED program meeting.</div></div>
         </section>
-
-        <footer style="margin-top: 60px; text-align: center; font-size: 0.85rem; color: #888;">
-            &copy; 2025 Taewon Park.
-        </footer>
-
+        <footer>&copy; 2025 Taewon Park</footer>
     </div>
-
 </body>
 </html>

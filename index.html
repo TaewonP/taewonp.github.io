@@ -16,19 +16,27 @@
 
         body { background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; overflow-x: hidden; }
 
+        /* Navigation */
         .navbar { padding: 40px; display: flex; justify-content: space-between; position: absolute; width: calc(100% - 80px); z-index: 100; }
         .nav-brand { font-family: 'Cinzel', serif; font-size: 1.5rem; letter-spacing: 4px; text-transform: uppercase; color: var(--text); text-decoration: none; }
-        .nav-links a { color: var(--text); text-decoration: none; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; margin-left: 30px; }
+        .nav-links a { color: var(--text); text-decoration: none; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; margin-left: 30px; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--accent); }
 
+        /* Hero Section */
         .hero { height: 100vh; display: flex; align-items: center; position: relative; background-color: var(--bg); }
-        
-        /* Profile Image: No shade, no filters */
         .hero-image { position: absolute; left: 0; top: 0; width: 50%; height: 100%; background: url('profile.jpg') center/cover no-repeat; z-index: 1; }
         
+        /* Text alignment adjusted to clear the photo */
         .hero-text { margin-left: 55%; padding: 0 5%; z-index: 2; }
         .hero-text h1 { font-family: 'Playfair Display', serif; font-size: 5rem; font-weight: 400; margin: 0; line-height: 1.1; }
         .hero-text h2 { font-family: 'Cinzel', serif; font-size: 1rem; letter-spacing: 5px; color: var(--accent); font-weight: 800; text-transform: uppercase; margin-bottom: 20px; }
 
+        /* Social Icons: Bold Blue */
+        .social-links { margin-top: 40px; display: flex; gap: 30px; }
+        .social-links a { color: var(--accent); transition: transform 0.3s ease, opacity 0.3s; }
+        .social-links a:hover { transform: translateY(-3px); opacity: 0.8; }
+
+        /* Content Container */
         .container { max-width: 900px; margin: 0 auto; padding: 100px 40px; position: relative; z-index: 2; }
         h3 { font-family: 'Cinzel', serif; font-size: 1.2rem; letter-spacing: 4px; text-transform: uppercase; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; margin-bottom: 40px; }
         
@@ -40,6 +48,7 @@
             .hero-image { width: 100%; height: 450px; position: relative; }
             .hero-text { margin: 0; padding: 60px 40px; text-align: center; }
             .hero-text h1 { font-size: 3.5rem; }
+            .social-links { justify-content: center; }
         }
     </style>
 </head>
@@ -59,9 +68,10 @@
         <div class="hero-text">
             <h2>Stanford University</h2>
             <h1>Taewon<br>Park</h1>
-            <div style="margin-top:40px;">
-                <a href="mailto:twpark@stanford.edu" style="color:white; margin-right:25px;"><i class="fas fa-envelope fa-2x"></i></a>
-                <a href="https://scholar.google.com/citations?user=5C_wbnMAAAAJ&hl=en" target="_blank" style="color:white;"><i class="fas fa-graduation-cap fa-2x"></i></a>
+            <div class="social-links">
+                <a href="mailto:twpark@stanford.edu" title="Email"><i class="fas fa-envelope fa-2x"></i></a>
+                <a href="https://scholar.google.com/citations?user=5C_wbnMAAAAJ&hl=en" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap fa-2x"></i></a>
+                <a href="https://www.linkedin.com/in/taewon-park-4353001a0" target="_blank" title="LinkedIn"><i class="fab fa-linkedin fa-2x"></i></a>
             </div>
         </div>
     </div>

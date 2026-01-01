@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taewon Park | Stanford University</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -20,26 +20,24 @@
         .nav-brand { font-family: 'Cinzel', serif; font-size: 1.5rem; letter-spacing: 4px; text-transform: uppercase; color: var(--text); text-decoration: none; }
         .nav-links a { color: var(--text); text-decoration: none; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; margin-left: 30px; }
 
-        .hero { height: 100vh; display: flex; align-items: center; position: relative; }
-        .hero-image { position: absolute; left: 0; top: 0; width: 50%; height: 100%; background: url('profile.jpg') center/cover no-repeat; z-index: 1; }
-        .hero::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(10,10,10,0.2) 0%, rgba(10,10,10,1) 60%); z-index: 1; }
+        .hero { height: 100vh; display: flex; align-items: center; position: relative; background-color: var(--bg); }
         
-        .hero-text { margin-left: 50%; padding: 0 10%; z-index: 2; }
-        .hero-text h1 { font-family: 'Playfair Display', serif; font-size: 5rem; font-weight: 400; margin: 0; }
-        .hero-text h2 { font-family: 'Cinzel', serif; font-size: 1rem; letter-spacing: 5px; color: var(--muted); text-transform: uppercase; }
+        /* Profile Image: No shade, no filters */
+        .hero-image { position: absolute; left: 0; top: 0; width: 50%; height: 100%; background: url('profile.jpg') center/cover no-repeat; z-index: 1; }
+        
+        .hero-text { margin-left: 55%; padding: 0 5%; z-index: 2; }
+        .hero-text h1 { font-family: 'Playfair Display', serif; font-size: 5rem; font-weight: 400; margin: 0; line-height: 1.1; }
+        .hero-text h2 { font-family: 'Cinzel', serif; font-size: 1rem; letter-spacing: 5px; color: var(--accent); font-weight: 800; text-transform: uppercase; margin-bottom: 20px; }
 
         .container { max-width: 900px; margin: 0 auto; padding: 100px 40px; position: relative; z-index: 2; }
         h3 { font-family: 'Cinzel', serif; font-size: 1.2rem; letter-spacing: 4px; text-transform: uppercase; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; margin-bottom: 40px; }
-        
-        /* Updated Accent Font: Blue & Bold */
-        .accent-font { color: var(--accent); font-weight: 800; }
         
         .news-item { margin-bottom: 35px; display: flex; gap: 40px; }
         .news-date { font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 2px; color: var(--accent); font-weight: 800; min-width: 110px; }
         
         @media (max-width: 900px) {
             .hero { flex-direction: column; height: auto; padding-top: 120px; }
-            .hero-image { width: 100%; height: 400px; position: relative; }
+            .hero-image { width: 100%; height: 450px; position: relative; }
             .hero-text { margin: 0; padding: 60px 40px; text-align: center; }
             .hero-text h1 { font-size: 3.5rem; }
         }
@@ -62,8 +60,8 @@
             <h2>Stanford University</h2>
             <h1>Taewon<br>Park</h1>
             <div style="margin-top:40px;">
-                <a href="mailto:twpark@stanford.edu" style="color:white; margin-right:20px;"><i class="fas fa-envelope fa-lg"></i></a>
-                <a href="https://scholar.google.com" target="_blank" style="color:white;"><i class="fas fa-graduation-cap fa-lg"></i></a>
+                <a href="mailto:twpark@stanford.edu" style="color:white; margin-right:25px;"><i class="fas fa-envelope fa-2x"></i></a>
+                <a href="https://scholar.google.com/citations?user=5C_wbnMAAAAJ&hl=en" target="_blank" style="color:white;"><i class="fas fa-graduation-cap fa-2x"></i></a>
             </div>
         </div>
     </div>
@@ -71,18 +69,23 @@
     <div class="container">
         <section>
             <h3>About</h3>
-            <p>I am a PhD Candidate in the <strong>Safavi-Naeini Group</strong> at Stanford University. My research focuses on developing high-performance photonic integrated circuits (PICs) using thin-film lithium niobate (TFLN).</p>
+            <p>I am a PhD Candidate in the <strong><a href="https://linqs.stanford.edu//" target="_blank" style="color:white; text-decoration:underline;">Safavi-Naeini Group</a></strong> at Stanford University. My research lies at the intersection of <strong>integrated photonics, quantum optics, and nonlinear optics</strong>.</p>
+            <p>I focus on developing high-performance photonic integrated circuits (PICs) using thin-film lithium niobate (TFLN). My work aims to create scalable quantum and optical systems for squeezed light generation and quantum sensing.</p>
         </section>
 
         <section>
             <h3>Recent News</h3>
             <div class="news-item">
                 <span class="news-date">Sep 2025</span>
-                <div>Paper "Low-power integrated optical parametric amplification..." accepted in <strong>Nature</strong>.</div>
+                <div>Paper "Low-power integrated optical parametric amplification via second-harmonic resonance" accepted in <strong>Nature</strong>.</div>
             </div>
             <div class="news-item">
                 <span class="news-date">Aug 2025</span>
-                <div>Won <strong>Best Poster Award (Runner-up)</strong> at the DARPA INSPIRED meeting.</div>
+                <div>Won <strong>Best Poster Award (Runner-up)</strong> at the DARPA INSPIRED PI meeting.</div>
+            </div>
+            <div class="news-item">
+                <span class="news-date">Mar 2024</span>
+                <div>Paper "Single-mode squeezed-light generation..." published in <strong>Science Advances</strong>.</div>
             </div>
         </section>
     </div>

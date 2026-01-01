@@ -1,254 +1,110 @@
-<!DOCTYPE html>
+=<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV | Taewon Park</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400&family=Playfair+Display:ital,wght@0,400;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
     <style>
-        :root { 
-            --primary: #8C1515; 
-            --text: #333; 
-            --muted: #666; 
-            --border: rgba(0,0,0,0.08); 
-        }
-        body { 
-            font-family: 'Inter', sans-serif; 
-            line-height: 1.6; 
-            color: var(--text); 
-            margin: 0; 
-            padding-bottom: 100px; 
-            background-color: #fff;
-        }
+        body { background-color: #000; color: #fff; font-family: 'Inter', sans-serif; margin: 0; padding: 80px 40px; }
+        .nav-back { font-family: 'Cinzel', serif; letter-spacing: 3px; text-decoration: none; color: #8C1515; font-size: 0.8rem; }
         
-        /* Navigation */
-        .navbar { 
-            background: rgba(255,255,255,0.95); 
-            backdrop-filter: blur(10px); 
-            border-bottom: 1px solid var(--border); 
-            padding: 15px 0; 
-            position: sticky; 
-            top: 0; 
-            z-index: 1000; 
-        }
-        .nav-container { 
-            max-width: 900px; 
-            margin: 0 auto; 
-            padding: 0 40px; 
-            display: flex; 
-            justify-content: flex-end; 
-        }
-        .nav-link { 
-            text-decoration: none; 
-            color: var(--muted); 
-            font-weight: 500; 
-            font-size: 0.95rem; 
-            margin-left: 25px; 
-            transition: 0.2s;
-        }
-        .nav-link:hover, .nav-link.active { color: var(--primary); }
+        .container { max-width: 1000px; margin: 80px auto; }
+        
+        h1 { font-family: 'Playfair Display', serif; font-size: 4rem; font-weight: 400; border-bottom: 1px solid #333; padding-bottom: 40px; margin-bottom: 60px; }
+        
+        h2 { font-family: 'Cinzel', serif; font-size: 1rem; letter-spacing: 6px; text-transform: uppercase; color: #666; margin-top: 100px; margin-bottom: 40px; }
+        
+        .entry { display: flex; margin-bottom: 40px; }
+        .year { font-family: 'Cinzel', serif; width: 200px; color: #8C1515; font-size: 0.9rem; }
+        .details { flex: 1; border-left: 1px solid #222; padding-left: 40px; }
+        
+        .pub-list { list-style: none; padding: 0; }
+        .pub-item { margin-bottom: 40px; line-height: 1.8; color: #ccc; }
+        .me { color: #fff; font-weight: 400; text-decoration: underline; }
+        .journal { font-style: italic; color: #8C1515; }
 
-        .container { 
-            max-width: 900px; 
-            margin: 0 auto; 
-            padding: 60px 40px; 
-        }
-
-        /* Typography */
-        h1 { 
-            font-family: 'Playfair Display', serif; 
-            font-size: 2.8rem; 
-            margin: 0 0 10px; 
-        }
-        .cv-subtitle { 
-            color: var(--muted); 
-            font-size: 1.1rem; 
-            margin-bottom: 40px;
-        }
-        h2 { 
-            font-family: 'Playfair Display', serif; 
-            font-size: 1.4rem; 
-            color: var(--primary); 
-            text-transform: uppercase; 
-            letter-spacing: 1.2px; 
-            border-bottom: 1px solid #eee; 
-            padding-bottom: 10px; 
-            margin-top: 60px; 
-            margin-bottom: 30px;
-        }
-
-        /* Entries */
-        .entry { 
-            display: grid; 
-            grid-template-columns: 180px 1fr; 
-            margin-bottom: 25px; 
-        }
-        .year { 
-            font-weight: 600; 
-            color: var(--muted); 
-            font-size: 0.9rem;
-        }
-        .details { flex: 1; }
-        .institution { font-weight: 600; color: #000; }
-        .location { float: right; color: #777; font-style: italic; font-weight: 400; }
-
-        /* Publications */
-        .pub-list { 
-            padding-left: 25px; 
-            list-style-type: decimal; 
-        }
-        .pub-list li { 
-            margin-bottom: 20px; 
-            color: #444; 
-            padding-left: 5px;
-        }
-        .me { 
-            font-weight: 700; 
-            text-decoration: underline; 
-            color: #000; 
-        }
-        .journal { 
-            font-style: italic; 
-            color: var(--primary); 
-        }
-
-        @media (max-width: 768px) {
-            .entry { grid-template-columns: 1fr; }
-            .location { float: none; display: block; margin-top: 5px; }
-            .year { margin-bottom: 5px; }
-            .nav-container { justify-content: center; padding: 0 20px; }
-        }
-
-        @media print {
-            .navbar { display: none; }
-            .container { padding: 0; }
-        }
+        @media (max-width: 768px) { .entry { flex-direction: column; } .details { border-left: none; padding-left: 0; margin-top: 10px; } }
     </style>
 </head>
 <body>
-
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="cv.html" class="nav-link active">CV</a>
-            <a href="blog-science.html" class="nav-link">Science</a>
-            <a href="blog-personal.html" class="nav-link">Personal</a>
-        </div>
-    </nav>
+    <a href="index.html" class="nav-back">← Back to Profile</a>
 
     <div class="container">
-        <header>
-            <h1>Taewon Park</h1>
-            <div class="cv-subtitle">
-                PhD Candidate · Electrical Engineering · Stanford University<br>
-                twpark@stanford.edu
-            </div>
-        </header>
+        <h1>Curriculum Vitae</h1>
 
-        <section>
-            <h2>Education</h2>
-            <div class="entry">
-                <div class="year">2020.9 – PRESENT</div>
-                <div class="details">
-                    <div class="institution">Stanford University <span class="location">Stanford, CA, USA</span></div>
-                    <div>PhD in Electrical Engineering</div>
-                    <div>Advisor: Amir Safavi-Naeini (Applied Physics Department)</div>
-                </div>
+        <h2>Education</h2>
+        <div class="entry">
+            <div class="year">2020 – Pres</div>
+            <div class="details">
+                <strong>Stanford University</strong><br>
+                PhD in Electrical Engineering<br>
+                MS in Electrical Engineering
             </div>
-            <div class="entry">
-                <div class="year"></div>
-                <div class="details">
-                    <div class="institution">Stanford University <span class="location">Stanford, CA, USA</span></div>
-                    <div>MS in Electrical Engineering</div>
-                </div>
+        </div>
+        <div class="entry">
+            <div class="year">2016 – 2020</div>
+            <div class="details">
+                <strong>KAIST</strong><br>
+                BS in Electrical Engineering
             </div>
-            <div class="entry">
-                <div class="year"></div>
-                <div class="details">
-                    <div class="institution">KAIST <span class="location">Daejeon, South Korea</span></div>
-                    <div>BS in Electrical Engineering</div>
-                </div>
-            </div>
-        </section>
+        </div>
 
-        <section>
-            <h2>Selected Publications</h2>
-            <ol class="pub-list">
-                <li>
-                    Devin J. Dean*, <span class="me">Taewon Park*</span>, Hubert S. Stokowski, Luke Qi, Sam Robison, Alexander Y. Hwang, Jason Herrmann, Timothy P. McKenna, Martin M. Fejer, Amir H. Safavi-Naeini.
-                    “Low-power integrated optical parametric amplification via second-harmonic resonance.”
-                    <span class="journal">Accepted in Nature (2025)</span>.
-                </li>
-                <li>
-                    <span class="me">Taewon Park</span>, Hubert S Stokowski, Vahid Ansari, Timothy P McKenna, Alexander Y Hwang, Oguz Tolga Celik, Martin M Fejer, Amir H Safavi-Naeini.
-                    “Single-mode squeezed-light generation and tomography with an integrated optical parametric oscillator.”
-                    <span class="journal">Science Advances 10(11), eadl1814 (2024)</span>.
-                </li>
-                <li>
-                    <span class="me">Taewon Park</span>, Hubert S Stokowski, Vahid Ansari, Timothy P McKenna, Alexander Y Hwang, Martin M Fejer, Amir H Safavi-Naeini.
-                    “High-efficiency second harmonic generation of blue light on thin-film lithium niobate.”
-                    <span class="journal">Optics Letters 47(11), 2706-2709 (2022)</span>.
-                </li>
-                <li>
-                    Hubert S Stokowski, Devin J Dean, Alexander Y Hwang, <span class="me">Taewon Park</span>, Oguz Tolga Celik, Timothy P McKenna, Marc Jankowski, Carsten Langrock, Vahid Ansari, Martin M Fejer, Amir H Safavi-Naeini*.
-                    “Integrated frequency-modulated optical parametric oscillator.”
-                    <span class="journal">Nature 627(8002), 95-100 (2024)</span>.
-                </li>
-                <li>
-                    Sunil Pai, Zhanghao Sun, Tyler W Hughes, <span class="me">Taewon Park</span>, Ben Bartlett, Ian A D Williamson, Momchil Minkov, Maziyar Milanizadeh, Nathnael Abebe, Francesco Morichetti, and others.
-                    “Experimentally realized in situ backpropagation for deep learning in photonic neural networks.”
-                    <span class="journal">Science 380(6643), 398-404 (2023)</span>.
-                </li>
-                <li>
-                    <span class="me">Taewon Park</span>, Youngjae Jeong, Kyoungsik Yu.
-                    “Cascaded optical resonator-based programmable photonic integrated circuits.”
-                    <span class="journal">Optics Express 29(3), 4645-4660 (2021)</span>.
-                </li>
-            </ol>
-            <p style="margin-left: 25px; font-size: 0.9rem; color: var(--muted); font-style: italic;">
-                * Indicates equal contribution. For a complete list of publications, please visit my <a href="https://scholar.google.com/citations?user=5C_wbnMAAAAJ&hl=en" target="_blank" style="color:var(--primary); text-decoration:none;">Google Scholar</a>.
-            </p>
-        </section>
+        <h2>Selected Publications</h2>
+        <ul class="pub-list">
+            <li class="pub-item">
+                Devin J. Dean*, <span class="me">Taewon Park*</span>, Hubert S. Stokowski, Luke Qi, Sam Robison, Alexander Y. Hwang, Jason Herrmann, Timothy P. McKenna, Martin M. Fejer, Amir H. Safavi-Naeini.
+                “Low-power integrated optical parametric amplification via second-harmonic resonance.”
+                <span class="journal">Accepted in Nature (2025)</span>.
+            </li>
+            <li class="pub-item">
+                <span class="me">Taewon Park</span>, Hubert S Stokowski, Vahid Ansari, Timothy P McKenna, Alexander Y Hwang, Oguz Tolga Celik, Martin M Fejer, Amir H Safavi-Naeini.
+                “Single-mode squeezed-light generation and tomography with an integrated optical parametric oscillator.”
+                <span class="journal">Science Advances 10(11), eadl1814 (2024)</span>.
+            </li>
+            <li class="pub-item">
+                <span class="me">Taewon Park</span>, Hubert S Stokowski, Vahid Ansari, Timothy P McKenna, Alexander Y Hwang, Martin M Fejer, Amir H Safavi-Naeini.
+                “High-efficiency second harmonic generation of blue light on thin-film lithium niobate.”
+                <span class="journal">Optics Letters 47(11), 2706-2709 (2022)</span>.
+            </li>
+            <li class="pub-item">
+                Hubert S Stokowski, Devin J Dean, Alexander Y Hwang, <span class="me">Taewon Park</span>, Oguz Tolga Celik, Timothy P McKenna, Marc Jankowski, Carsten Langrock, Vahid Ansari, Martin M Fejer, Amir H Safavi-Naeini*.
+                “Integrated frequency-modulated optical parametric oscillator.”
+                <span class="journal">Nature 627(8002), 95-100 (2024)</span>.
+            </li>
+            <li class="pub-item">
+                Sunil Pai, Zhanghao Sun, Tyler W Hughes, <span class="me">Taewon Park</span>, Ben Bartlett, Ian A D Williamson, Momchil Minkov, Maziyar Milanizadeh, Nathnael Abebe, Francesco Morichetti, and others.
+                “Experimentally realized in situ backpropagation for deep learning in photonic neural networks.”
+                <span class="journal">Science 380(6643), 398-404 (2023)</span>.
+            </li>
+            <li class="pub-item">
+                <span class="me">Taewon Park</span>, Youngjae Jeong, Kyoungsik Yu.
+                “Cascaded optical resonator-based programmable photonic integrated circuits.”
+                <span class="journal">Optics Express 29(3), 4645-4660 (2021)</span>.
+            </li>
+        </ul>
 
-        <section>
-            <h2>Selected Presentations</h2>
-            <div class="entry">
-                <div class="year">AUG 2025</div>
-                <div class="details">
-                    <strong>Nonlinear Optics Conference (Hawaii)</strong><br>
-                    “Integrated Optical Parametric Oscillator Squeezer on Thin-Film Lithium Niobate”
-                </div>
-            </div>
-            <div class="entry">
-                <div class="year">AUG 2024</div>
-                <div class="details">
-                    <strong>NTT Coherent Ising Machine (CIM) consortium (Virtual)</strong><br>
-                    “Towards Integrated Quantum Squeezed Light Sensor”
-                </div>
-            </div>
-            <div class="entry">
-                <div class="year">JUL 2024</div>
-                <div class="details">
-                    <strong>(Invited) Workshop on Quantum Light Generation, JILA</strong><br>
-                    “Single-mode squeezed-light generation and tomography with an integrated optical parametric oscillator”
-                </div>
-            </div>
-            <div class="entry">
-                <div class="year">MAY 2023</div>
-                <div class="details">
-                    <strong>CLEO: Science and Innovations (San Jose, CA)</strong><br>
-                    “Squeezed light generation and analysis using a sub-threshold optical parametric oscillator on integrated thin-film lithium niobate photonic circuit”
-                </div>
-            </div>
-            <div class="entry">
-                <div class="year">MAY 2022</div>
-                <div class="details">
-                    <strong>CLEO: Science and Innovations (San Jose, CA)</strong><br>
-                    “Second harmonic generation of blue light on integrated thin-film lithium niobate waveguides”
-                </div>
-            </div>
-        </section>
+        <h2>Presentations</h2>
+        <div class="entry">
+            <div class="year">AUG 2025</div>
+            <div class="details"><strong>Nonlinear Optics Conference (Hawaii)</strong>: “Integrated Optical Parametric Oscillator Squeezer on Thin-Film Lithium Niobate”</div>
+        </div>
+        <div class="entry">
+            <div class="year">AUG 2024</div>
+            <div class="details"><strong>NTT Coherent Ising Machine consortium</strong>: “Towards Integrated Quantum Squeezed Light Sensor”</div>
+        </div>
+        <div class="entry">
+            <div class="year">JUL 2024</div>
+            <div class="details"><strong>JILA Workshop</strong>: “(Invited) Single-mode squeezed-light generation and tomography”</div>
+        </div>
+        <div class="entry">
+            <div class="year">MAY 2023</div>
+            <div class="details"><strong>CLEO: Science and Innovations</strong>: “Squeezed light generation and analysis...”</div>
+        </div>
+        <div class="entry">
+            <div class="year">MAY 2022</div>
+            <div class="details"><strong>CLEO: Science and Innovations</strong>: “Second harmonic generation of blue light...”</div>
+        </div>
     </div>
-
 </body>
 </html>

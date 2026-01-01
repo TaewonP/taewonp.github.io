@@ -3,57 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal | Taewon Park</title>
+    <title>Personal Blog | Taewon Park</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Shared Styles */
-        :root { --primary: #8C1515; --text: #2d2d2d; --muted: #666; --bg: #fcfcfc; --border: rgba(0,0,0,0.08); }
-        body { font-family: 'Inter', sans-serif; line-height: 1.7; color: var(--text); background: var(--bg); margin: 0; }
-        .navbar { background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); padding: 20px 0; position: sticky; top: 0; z-index: 1000; }
-        .nav-container { max-width: 900px; margin: 0 auto; padding: 0 30px; display: flex; justify-content: space-between; align-items: center; }
-        .nav-brand { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.3rem; text-decoration: none; color: var(--text); }
-        .nav-link { text-decoration: none; color: var(--muted); font-weight: 500; font-size: 0.95rem; margin-left: 25px; transition: 0.2s; }
-        .nav-link:hover, .nav-link.active { color: var(--primary); }
-
-        .container { max-width: 800px; margin: 0 auto; padding: 60px 30px; }
-        h1 { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin-bottom: 20px; }
-        .intro-text { font-style: italic; color: var(--muted); margin-bottom: 60px; font-size: 1.1rem; }
-
-        .thoughts-grid { border-top: 1px solid var(--border); padding-top: 40px; }
-        .thought-item { margin-bottom: 40px; }
-        .thought-date { font-size: 0.8rem; color: var(--primary); font-weight: 700; text-transform: uppercase; margin-bottom: 10px; display: block; }
-        .thought-content { font-size: 1.1rem; }
-        
-        footer { text-align: center; color: var(--muted); margin-top: 100px; padding: 40px 0; border-top: 1px solid var(--border); }
+        :root { --primary: #8C1515; --text: #333; --muted: #666; --border: rgba(0,0,0,0.08); }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: var(--text); margin: 0; }
+        .navbar { background: rgba(255,255,255,0.9); border-bottom: 1px solid var(--border); padding: 15px 0; position: sticky; top: 0; z-index: 1000; }
+        .nav-container { max-width: 900px; margin: 0 auto; padding: 0 40px; display: flex; justify-content: flex-end; }
+        .nav-link { text-decoration: none; color: var(--muted); font-weight: 500; margin-left: 25px; }
+        .nav-link.active { color: var(--primary); }
+        .container { max-width: 800px; margin: 40px auto; padding: 0 40px; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 2.8rem; }
     </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="nav-brand">Taewon Park</a>
-            <div class="nav-links">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="cv.html" class="nav-link">CV</a>
-                <a href="blog-science.html" class="nav-link">Science</a>
-                <a href="blog-personal.html" class="nav-link active">Personal</a>
-            </div>
-        </div>
-    </nav>
-
+    <nav class="navbar"><div class="nav-container"><a href="index.html" class="nav-link">Home</a><a href="cv.html" class="nav-link">CV</a><a href="blog-science.html" class="nav-link">Science</a><a href="blog-personal.html" class="nav-link active">Personal</a></div></nav>
     <div class="container">
         <h1>Personal Blog</h1>
-        <p class="intro-text">Thoughts and scribbles about things that I am interested in.</p>
-        
-        <div class="thoughts-grid">
-            <div class="thought-item">
-                <span class="thought-date">In Progress</span>
-                <div class="thought-content">
-                    Check back soon for updates! I'm currently reflecting on <em>Living the Creative Life</em>, <em>The Beginning of Infinity</em>, and <em>Remarkably Bright Creatures</em>.
-                </div>
-            </div>
-        </div>
+        <p>Thoughts and scribbles about things that I am interested in.</p>
+        <hr style="border:0; border-top: 1px solid #eee; margin: 30px 0;">
+        <p><em>Check back soon for updates! Thoughts from watching/reading living the creative life (formerly living the classical life), The beginning of infinity, Abundance, When everyone knows that everyone knows, Remarkably bright creatures.</em></p>
     </div>
-    <footer>&copy; 2025 Taewon Park</footer>
 </body>
 </html>

@@ -10,7 +10,7 @@
         :root {
             --bg: #0a0a0a;
             --text: #ffffff;
-            --accent: #8C1515; /* Stanford Red, used sparingly */
+            --accent: #8C1515; /* Stanford Red */
             --muted: #a0a0a0;
         }
 
@@ -20,6 +20,7 @@
             font-family: 'Inter', sans-serif;
             margin: 0;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
 
         /* Minimal Navigation */
@@ -54,7 +55,7 @@
 
         .nav-links a:hover { opacity: 0.6; }
 
-        /* Grimaud-style Hero */
+        /* Cinematic Hero Section */
         .hero {
             height: 100vh;
             display: flex;
@@ -69,8 +70,21 @@
             top: 0;
             width: 50%;
             height: 100%;
+            /* Note: grayscale and high contrast filters removed for color photo */
             background: url('profile.jpg') center/cover no-repeat;
-            filter: grayscale(100%) contrast(110%);
+            z-index: 1;
+        }
+
+        /* Gradient overlay to ensure text readability on mobile/split views */
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(10,10,10,0.2) 0%, rgba(10,10,10,1) 60%);
+            z-index: 1;
         }
 
         .hero-text {
@@ -96,11 +110,26 @@
             text-transform: uppercase;
         }
 
+        .social-links {
+            margin-top: 40px;
+        }
+
+        .social-links a {
+            color: var(--text);
+            font-size: 1.4rem;
+            margin-right: 25px;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover { color: var(--accent); }
+
         /* Content Sections */
         .container {
             max-width: 900px;
             margin: 0 auto;
             padding: 100px 40px;
+            z-index: 2;
+            position: relative;
         }
 
         h3 {
@@ -111,6 +140,7 @@
             border-bottom: 1px solid rgba(255,255,255,0.1);
             padding-bottom: 20px;
             margin-bottom: 40px;
+            color: var(--text);
         }
 
         p {
@@ -120,10 +150,29 @@
             margin-bottom: 40px;
         }
 
+        strong { color: var(--text); }
+        strong a { color: var(--text); text-decoration: underline; text-underline-offset: 4px; }
+
+        /* Research Interest Grid */
+        .interest-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+            font-family: 'Cinzel', serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            color: var(--text);
+        }
+
+        /* News Styles */
         .news-item {
-            margin-bottom: 30px;
+            margin-bottom: 35px;
             display: flex;
             gap: 40px;
+            align-items: flex-start;
         }
 
         .news-date {
@@ -131,14 +180,34 @@
             font-size: 0.8rem;
             letter-spacing: 2px;
             color: var(--accent);
-            min-width: 100px;
+            min-width: 110px;
+            font-weight: 700;
         }
 
+        .news-content {
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 80px 40px;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #444;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* Responsive Mobile Layout */
         @media (max-width: 900px) {
-            .hero { flex-direction: column; }
-            .hero-image { width: 100%; height: 50%; position: relative; }
-            .hero-text { margin: 0; padding: 40px; text-align: center; }
-            .hero-text h1 { font-size: 3rem; }
+            .navbar { padding: 20px; width: calc(100% - 40px); }
+            .hero { flex-direction: column; height: auto; padding-top: 120px; }
+            .hero-image { width: 100%; height: 400px; position: relative; }
+            .hero::after { background: linear-gradient(to bottom, rgba(10,10,10,0) 0%, rgba(10,10,10,1) 90%); }
+            .hero-text { margin: 0; padding: 60px 40px; text-align: center; }
+            .hero-text h1 { font-size: 3.5rem; }
+            .news-item { flex-direction: column; gap: 10px; }
         }
     </style>
 </head>
@@ -159,9 +228,10 @@
         <div class="hero-text">
             <h2>Stanford University</h2>
             <h1>Taewon<br>Park</h1>
-            <div style="margin-top: 40px;">
-                <a href="mailto:twpark@stanford.edu" style="color:white; font-size: 1.5rem; margin-right: 20px;"><i class="fas fa-envelope"></i></a>
-                <a href="https://scholar.google.com/citations?user=5C_wbnMAAAAJ&hl=en" style="color:white; font-size: 1.5rem;"><i class="fas fa-graduation-cap"></i></a>
+            <div class="social-links">
+                <a href="mailto:twpark@stanford.edu"><i class="fas fa-envelope"></i></a>
+                <a href="https://scholar.google.com/citations?user=5C_wbnMAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+                <a href="https://www.linkedin.com/in/taewon-park-4353001a0" target="_blank"><i class="fab fa-linkedin"></i></a>
             </div>
         </div>
     </div>
@@ -170,21 +240,44 @@
         <section>
             <h3>About</h3>
             <p>
-                I am a PhD Candidate in the Safavi-Naeini Group at Stanford University. My research lies at the intersection of integrated photonics, quantum optics, and nonlinear optics. I focus on developing high-performance photonic integrated circuits (PICs) using thin-film lithium niobate (TFLN).
+                I am a PhD Candidate in the <strong><a href="https://linqs.stanford.edu//" target="_blank">Safavi-Naeini Group</a></strong> at Stanford University. My research lies at the intersection of <strong>integrated photonics, quantum optics, and nonlinear optics</strong>.
+            </p>
+            <p>
+                I focus on developing high-performance photonic integrated circuits (PICs) using thin-film lithium niobate (TFLN). My work aims to create scalable quantum and optical systems for squeezed light generation and quantum sensing.
             </p>
         </section>
 
         <section>
+            <h3>Research Interests</h3>
+            <ul class="interest-grid">
+                <li>Integrated Photonics</li>
+                <li>Quantum Optics & Sensing</li>
+                <li>Nonlinear Optics</li>
+            </ul>
+        </section>
+
+        <section style="margin-top: 100px;">
             <h3>Recent News</h3>
+            
             <div class="news-item">
                 <span class="news-date">Sep 2025</span>
-                <div>Paper "Low-power integrated optical parametric amplification..." accepted in <strong>Nature</strong>.</div>
+                <div class="news-content">Paper "Low-power integrated optical parametric amplification via second-harmonic resonance" accepted in <strong>Nature</strong>.</div>
             </div>
+
             <div class="news-item">
                 <span class="news-date">Aug 2025</span>
-                <div>Won <strong>Best Poster Award (Runner-up)</strong> at the DARPA INSPIRED program PI meeting.</div>
+                <div class="news-content">Won <strong>Best Poster Award (Runner-up)</strong> at the DARPA INSPIRED program PI meeting.</div>
+            </div>
+
+            <div class="news-item">
+                <span class="news-date">Mar 2024</span>
+                <div class="news-content">Paper "Single-mode squeezed-light generation..." published in <strong>Science Advances</strong>.</div>
             </div>
         </section>
+
+        <footer>
+            &copy; 2025 Taewon Park &nbsp; | &nbsp; Stanford University
+        </footer>
     </div>
 
 </body>

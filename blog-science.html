@@ -4,28 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Science Blog | Taewon Park</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;800&family=Playfair+Display:ital,wght@0,400;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #8C1515; --text: #333; --muted: #666; --border: rgba(0,0,0,0.08); }
-        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: var(--text); margin: 0; }
-        .navbar { background: rgba(255,255,255,0.9); border-bottom: 1px solid var(--border); padding: 15px 0; position: sticky; top: 0; z-index: 1000; }
-        .nav-container { max-width: 900px; margin: 0 auto; padding: 0 40px; display: flex; justify-content: flex-end; }
-        .nav-link { text-decoration: none; color: var(--muted); font-weight: 500; margin-left: 25px; }
-        .nav-link.active { color: var(--primary); }
-        .container { max-width: 800px; margin: 40px auto; padding: 0 40px; }
-        h1 { font-family: 'Playfair Display', serif; font-size: 2.8rem; }
+        body { background-color: #000; color: #fff; font-family: 'Inter', sans-serif; margin: 0; padding: 80px 40px; line-height: 1.6; }
+        .nav-back { font-family: 'Cinzel', serif; letter-spacing: 3px; text-decoration: none; color: #0071bc; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; }
+        
+        .container { max-width: 1000px; margin: 60px auto; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 4rem; font-weight: 400; border-bottom: 1px solid #333; padding-bottom: 40px; margin-bottom: 60px; }
+        
+        .post-entry { margin-bottom: 80px; }
+        .post-title { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 10px; color: #fff; }
+        .post-meta { font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 2px; color: #0071bc; font-weight: 800; margin-bottom: 20px; text-transform: uppercase; }
+        .post-content { color: #ccc; font-size: 1.1rem; line-height: 2; }
+        
+        hr { border: 0; border-top: 1px solid #222; margin: 60px 0; }
     </style>
 </head>
 <body>
-    <nav class="navbar"><div class="nav-container"><a href="index.html" class="nav-link">Home</a><a href="cv.html" class="nav-link">CV</a><a href="blog-science.html" class="nav-link active">Science</a><a href="blog-personal.html" class="nav-link">Personal</a></div></nav>
+    <a href="index.html" class="nav-back">← Back to Profile</a>
+
     <div class="container">
         <h1>Science & Engineering Blog</h1>
-        <p>Thoughts on photonics, quantum systems, and research.</p>
-        <hr style="border:0; border-top: 1px solid #eee; margin: 30px 0;">
-        <div style="border-bottom: 1px solid #eee; padding-bottom: 30px;">
-            <h2 style="font-family:'Playfair Display'; margin-bottom: 5px;">Coming Soon...</h2>
-            <div style="font-size: 0.9rem; color: #777;">Posted on December 7, 2025</div>
-        </div>
+        <p style="font-family: 'Cinzel', serif; letter-spacing: 3px; color: #666; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 60px;">
+            Thoughts on photonics, quantum systems, and research.
+        </p>
+
+        <article class="post-entry">
+            <h2 class="post-title">Coming Soon...</h2>
+            <div class="post-meta">Posted on December 7, 2025</div>
+            <div class="post-content">
+                Technical deep-dives into Lithium Niobate fabrication and the future of integrated quantum circuits are currently in development.
+            </div>
+        </article>
     </div>
 </body>
 </html>

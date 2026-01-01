@@ -4,25 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Blog | Taewon Park</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;800&family=Playfair+Display:ital,wght@0,400;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #8C1515; --text: #333; --muted: #666; --border: rgba(0,0,0,0.08); }
-        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: var(--text); margin: 0; }
-        .navbar { background: rgba(255,255,255,0.9); border-bottom: 1px solid var(--border); padding: 15px 0; position: sticky; top: 0; z-index: 1000; }
-        .nav-container { max-width: 900px; margin: 0 auto; padding: 0 40px; display: flex; justify-content: flex-end; }
-        .nav-link { text-decoration: none; color: var(--muted); font-weight: 500; margin-left: 25px; }
-        .nav-link.active { color: var(--primary); }
-        .container { max-width: 800px; margin: 40px auto; padding: 0 40px; }
-        h1 { font-family: 'Playfair Display', serif; font-size: 2.8rem; }
+        body { background-color: #000; color: #fff; font-family: 'Inter', sans-serif; margin: 0; padding: 80px 40px; line-height: 1.6; }
+        .nav-back { font-family: 'Cinzel', serif; letter-spacing: 3px; text-decoration: none; color: #0071bc; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; }
+        
+        .container { max-width: 1000px; margin: 60px auto; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 4rem; font-weight: 400; border-bottom: 1px solid #333; padding-bottom: 40px; margin-bottom: 60px; }
+        
+        .reading-list { list-style: none; padding: 0; }
+        .reading-list li { 
+            margin-bottom: 15px; 
+            font-size: 1.1rem; 
+            color: #ccc; 
+            padding-left: 20px; 
+            border-left: 2px solid #0071bc; 
+        }
+        
+        .accent-blue { color: #0071bc; font-weight: 800; font-family: 'Cinzel', serif; letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; }
     </style>
 </head>
 <body>
-    <nav class="navbar"><div class="nav-container"><a href="index.html" class="nav-link">Home</a><a href="cv.html" class="nav-link">CV</a><a href="blog-science.html" class="nav-link">Science</a><a href="blog-personal.html" class="nav-link active">Personal</a></div></nav>
+    <a href="index.html" class="nav-back">← Back to Profile</a>
+
     <div class="container">
         <h1>Personal Blog</h1>
-        <p>Thoughts and scribbles about things that I am interested in.</p>
-        <hr style="border:0; border-top: 1px solid #eee; margin: 30px 0;">
-        <p><em>Check back soon for updates! Thoughts from watching/reading living the creative life (formerly living the classical life), The beginning of infinity, Abundance, When everyone knows that everyone knows, Remarkably bright creatures.</em></p>
+        <p style="font-family: 'Cinzel', serif; letter-spacing: 3px; color: #666; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 60px;">
+            Thoughts and scribbles about interests beyond the lab.
+        </p>
+
+        <div style="margin-bottom: 40px;">
+            <span class="accent-blue">Current Reflections</span>
+        </div>
+        
+        <p style="color: #ccc; font-style: italic; margin-bottom: 30px;">
+            Check back soon for updates! I am currently reflecting on the following works:
+        </p>
+
+        <ul class="reading-list">
+            <li>Living the creative life (formerly living the classical life)</li>
+            <li>The beginning of infinity</li>
+            <li>Abundance</li>
+            <li>When everyone knows that everyone knows</li>
+            <li>Remarkably bright creatures</li>
+        </ul>
     </div>
 </body>
 </html>

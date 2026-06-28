@@ -1,0 +1,7 @@
+# Source artifacts used to build the site, not served by it
+*.HEIC
+BlueSHG.pdf
+OPO squeezer.pdf
+squeezing photo.jpg
+Squeezing photo.jpg
+.DS_Store

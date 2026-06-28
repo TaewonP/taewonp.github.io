@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taewon Park | Stanford University</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <title>Taewon Park | Quantum Photonics @ Stanford</title>
+    <link rel="icon" id="favicon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+M8AAAMBAQDJ/pLvAAAAAElFTkSuQmCC">
+    <meta name="description" content="Taewon Park — PhD candidate in Electrical Engineering at Stanford. Integrated photonics, quantum optics, and nonlinear optics. First-author work in Nature, Science Advances, and Optics Letters.">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -12,92 +14,155 @@
             --text: #ffffff;
             --accent: #0071bc; /* Bold Blue */
             --muted: #a0a0a0;
+            --line: rgba(255,255,255,0.1);
         }
-
-        body { background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; overflow-x: hidden; }
+        * { box-sizing: border-box; }
+        body { background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; overflow-x: hidden; line-height: 1.6; }
+        a { color: inherit; }
 
         /* Navigation */
-        .navbar { padding: 40px; display: flex; justify-content: space-between; position: absolute; width: calc(100% - 80px); z-index: 100; }
-        .nav-brand { font-family: 'Cinzel', serif; font-size: 1.5rem; letter-spacing: 4px; text-transform: uppercase; color: var(--text); text-decoration: none; }
-        .nav-links a { color: var(--text); text-decoration: none; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; margin-left: 30px; transition: color 0.3s; }
+        .navbar { padding: 35px 6vw; display: flex; justify-content: space-between; align-items: center; width: 100%; z-index: 100; }
+        .nav-brand { display: block; line-height: 0; text-decoration: none; }
+        .nav-brand canvas { display: block; }
+        .nav-links a { color: var(--text); text-decoration: none; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; margin-left: 28px; transition: color 0.3s; }
         .nav-links a:hover { color: var(--accent); }
 
-        /* Hero Section */
-        .hero { height: 100vh; display: flex; align-items: center; position: relative; background-color: var(--bg); }
-        .hero-image { position: absolute; left: 0; top: 0; width: 50%; height: 100%; background: url('profile.jpg') center/cover no-repeat; z-index: 1; }
-        
-        /* Text alignment adjusted to clear the photo */
-        .hero-text { margin-left: 55%; padding: 0 5%; z-index: 2; }
-        .hero-text h1 { font-family: 'Playfair Display', serif; font-size: 5rem; font-weight: 400; margin: 0; line-height: 1.1; }
-        .hero-text h2 { font-family: 'Cinzel', serif; font-size: 1rem; letter-spacing: 5px; color: var(--accent); font-weight: 800; text-transform: uppercase; margin-bottom: 20px; }
+        /* Hero Section — photo is now a contained portrait, not a full panel */
+        .hero { display: flex; align-items: center; gap: 60px; max-width: 1100px; margin: 0 auto; padding: 60px 6vw 40px; flex-wrap: wrap; }
+        .hero-portrait {
+            width: 280px; height: 350px; flex-shrink: 0;
+            background: url('profile.jpg') center 20%/cover no-repeat;
+            border-radius: 6px;
+            border: 1px solid var(--line);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6), 0 0 0 1px rgba(0,113,188,0.15);
+        }
+        .hero-text { flex: 1; min-width: 300px; }
+        .hero-text h2 { font-family: 'Cinzel', serif; font-size: 0.85rem; letter-spacing: 5px; color: var(--accent); font-weight: 800; text-transform: uppercase; margin: 0 0 14px; }
+        .hero-text h1 { font-family: 'Playfair Display', serif; font-size: 3.1rem; font-weight: 400; margin: 0; line-height: 1.05; }
+        .hero-tagline { color: var(--muted); font-size: 1.05rem; margin: 22px 0 0; max-width: 540px; }
+        .hero-tagline strong { color: var(--text); font-weight: 500; }
 
-        /* Social Icons: Bold Blue */
-        .social-links { margin-top: 40px; display: flex; gap: 30px; }
+        .social-links { margin-top: 30px; display: flex; gap: 26px; align-items: center; }
         .social-links a { color: var(--accent); transition: transform 0.3s ease, opacity 0.3s; }
         .social-links a:hover { transform: translateY(-3px); opacity: 0.8; }
 
         /* Content Container */
-        .container { max-width: 900px; margin: 0 auto; padding: 100px 40px; position: relative; z-index: 2; }
-        h3 { font-family: 'Cinzel', serif; font-size: 1.2rem; letter-spacing: 4px; text-transform: uppercase; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; margin-bottom: 40px; }
-        
-        .news-item { margin-bottom: 35px; display: flex; gap: 40px; }
-        .news-date { font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 2px; color: var(--accent); font-weight: 800; min-width: 110px; }
-        
-        @media (max-width: 900px) {
-            .hero { flex-direction: column; height: auto; padding-top: 120px; }
-            .hero-image { width: 100%; height: 450px; position: relative; }
-            .hero-text { margin: 0; padding: 60px 40px; text-align: center; }
-            .hero-text h1 { font-size: 3.5rem; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 70px 6vw; position: relative; z-index: 2; }
+        section { margin-bottom: 70px; }
+        h3 { font-family: 'Cinzel', serif; font-size: 1.1rem; letter-spacing: 4px; text-transform: uppercase; border-bottom: 1px solid var(--line); padding-bottom: 18px; margin-bottom: 35px; }
+        p { color: #d4d4d4; }
+        .container a.inline { color: #fff; text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 3px; }
+
+        /* Strengths grid */
+        .strengths { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px; }
+        .strength h4 { font-family: 'Cinzel', serif; font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin: 0 0 10px; }
+        .strength p { font-size: 0.95rem; margin: 0; color: var(--muted); }
+
+        .news-item { margin-bottom: 28px; display: flex; gap: 40px; }
+        .news-date { font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 2px; color: var(--accent); font-weight: 800; min-width: 110px; flex-shrink: 0; padding-top: 2px; }
+        .news-item div a { color: #fff; text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 3px; }
+
+        footer { text-align: center; padding: 50px 20px; color: #fff; font-size: 0.8rem; letter-spacing: 1px; border-top: 1px solid var(--line); }
+
+        @media (max-width: 760px) {
+            .navbar { flex-direction: column; gap: 18px; padding: 30px 6vw; }
+            .nav-links a { margin: 0 14px; }
+            .hero { justify-content: center; text-align: center; gap: 36px; }
+            .hero-portrait { width: 220px; height: 280px; }
+            .hero-text h1 { font-size: 2.5rem; }
             .social-links { justify-content: center; }
+            .hero-tagline { margin-left: auto; margin-right: auto; }
         }
     </style>
 </head>
 <body>
     <nav class="navbar">
-        <a href="index.html" class="nav-brand">Park</a>
+        <a href="index.html" class="nav-brand" aria-label="Taewon Park — home" title="Quantum squeezing of photon-counting noise"><canvas id="squeezeLogo"></canvas></a>
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="cv.html">CV</a>
-            <a href="blog-science.html">Science</a>
+            <a href="blog-science.html">Research</a>
             <a href="blog-personal.html">Personal</a>
         </div>
     </nav>
 
-    <div class="hero">
-        <div class="hero-image"></div>
+    <header class="hero">
+        <div class="hero-portrait"></div>
         <div class="hero-text">
-            <h2>Stanford University</h2>
-            <h1>Taewon<br>Park</h1>
+            <h1>Taewon Park</h1>
+            <p class="hero-tagline">
+                PhD candidate in Electrical Engineering at Stanford University. I work on
+                <strong>quantum and nonlinear photonic chips</strong> — turning hard physics into
+                working hardware, from on-chip squeezed-light sources to efficient optical amplifiers.
+            </p>
             <div class="social-links">
                 <a href="mailto:twpark@stanford.edu" title="Email"><i class="fas fa-envelope fa-2x"></i></a>
-                <a href="https://scholar.google.com/citations?user=5C_wbnMAAAAJ&hl=en" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap fa-2x"></i></a>
-                <a href="https://www.linkedin.com/in/taewon-park-4353001a0" target="_blank" title="LinkedIn"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="https://scholar.google.com/citations?user=5C_wbnMAAAAJ&hl=en" target="_blank" rel="noopener" title="Google Scholar"><i class="fas fa-graduation-cap fa-2x"></i></a>
+                <a href="https://www.linkedin.com/in/taewon-park-4353001a0" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin fa-2x"></i></a>
             </div>
         </div>
-    </div>
+    </header>
 
     <div class="container">
         <section>
             <h3>About</h3>
-            <p>I am a PhD Candidate in the <strong><a href="https://linqs.stanford.edu//" target="_blank" style="color:white; text-decoration:underline;">Safavi-Naeini Group</a></strong> at Stanford University. My research lies at the intersection of <strong>integrated photonics, quantum optics, and nonlinear optics</strong>.</p>
-            <p>I focus on developing high-performance photonic integrated circuits (PICs) using thin-film lithium niobate (TFLN). My work aims to create scalable quantum and optical systems for squeezed light generation and quantum sensing.</p>
+            <p>I am a PhD candidate in the <a class="inline" href="https://linqs.stanford.edu/" target="_blank" rel="noopener">Safavi-Naeini Group (LINQS)</a> at Stanford University. The theme of my PhD is <strong>making quantum technologies useful</strong> — and in particular building the <strong>photonics-based quantum hardware</strong> that takes quantum and nonlinear optics out of the lab and onto a chip.</p>
+            <p>I design, nanofabricate, and characterize photonic integrated circuits on <strong>thin-film lithium niobate (TFLN)</strong> — the platform reshaping how light is generated, controlled, and measured on a chip. My work spans the full stack: from device physics and simulation, through cleanroom fabrication, to building the optical and electronic experiments that prove a device works. This work spans an on-chip squeezed-light source with full quantum-state tomography on TFLN, record-efficiency blue-light generation, and a low-power optical amplifier that intensifies light 100&times; on a chip.</p>
+            <p>I love taking hard ideas and turning them into working hardware, and I am drawn to <strong>ambitious problems where rigorous science becomes real-world technology</strong>. I'm always glad to connect — feel free to <a class="inline" href="https://www.linkedin.com/in/taewon-park-4353001a0" target="_blank" rel="noopener">reach out</a>.</p>
+        </section>
+
+        <section>
+            <h3>What I Bring</h3>
+            <div class="strengths">
+                <div class="strength">
+                    <h4>Device Physics &amp; Design</h4>
+                    <p>Nonlinear &amp; quantum photonic device design — OPOs, resonators, second-harmonic and parametric amplifiers — backed by Lumerical / COMSOL modeling.</p>
+                </div>
+                <div class="strength">
+                    <h4>Nanofabrication</h4>
+                    <p>End-to-end thin-film lithium niobate processing: e-beam and photolithography, RIE/ICP dry etching, wet etching, thin-film deposition, and periodic poling.</p>
+                </div>
+                <div class="strength">
+                    <h4>Quantum &amp; Optical Measurement</h4>
+                    <p>Homodyne/heterodyne detection, squeezed-light measurement, quantum-state tomography, and fiber-to-chip photonic test setups.</p>
+                </div>
+                <div class="strength">
+                    <h4>Automation &amp; AI Workflows</h4>
+                    <p>Python/MATLAB instrument control (GPIB/serial), automated parameter sweeps, and LLM-assisted CAD layout, simulation, and data pipelines.</p>
+                </div>
+            </div>
         </section>
 
         <section>
             <h3>Recent News</h3>
             <div class="news-item">
-                <span class="news-date">Sep 2025</span>
-                <div>Paper "Low-power integrated optical parametric amplification via second-harmonic resonance" accepted in <strong>Nature</strong>.</div>
+                <span class="news-date">Jan 2026</span>
+                <div>Our low-power on-chip optical amplifier is published in <strong>Nature</strong> and featured by <a href="https://news.stanford.edu/stories/2026/01/energy-efficient-optical-amplifier-biosensing-data-communication" target="_blank" rel="noopener">Stanford News</a> and <a href="https://physicsworld.com/a/compact-optical-amplifier-is-efficient-enough-for-on-chip-integration/" target="_blank" rel="noopener">Physics World</a>.</div>
             </div>
             <div class="news-item">
                 <span class="news-date">Aug 2025</span>
-                <div>Won <strong>Best Poster Award (Runner-up)</strong> at the DARPA INSPIRED PI meeting.</div>
+                <div>Presented our integrated OPO squeezer at the <strong>Nonlinear Optics Conference</strong> (Hawaii).</div>
+            </div>
+            <div class="news-item">
+                <span class="news-date">2025</span>
+                <div>Won <strong>Best Poster Award (runner-up)</strong> at the DARPA INSPIRED Program PI Meeting.</div>
             </div>
             <div class="news-item">
                 <span class="news-date">Mar 2024</span>
-                <div>Paper "Single-mode squeezed-light generation and tomography with an integrated optical parametric oscillator" published in <strong>Science Advances</strong>.</div>
+                <div>"Single-mode squeezed-light generation and tomography with an integrated optical parametric oscillator" published in <strong>Science Advances</strong>.</div>
+            </div>
+            <div class="news-item">
+                <span class="news-date">Mar 2024</span>
+                <div>Integrated frequency-modulated OPO published in <strong>Nature</strong>; covered by <a href="https://news.stanford.edu/stories/2024/03/low-power-high-precision-measurement-tool-boost-tech" target="_blank" rel="noopener">Stanford News</a>.</div>
             </div>
         </section>
     </div>
+
+    <footer>
+        Taewon Park &middot; Stanford, CA &middot; <a href="mailto:twpark@stanford.edu" style="color:var(--accent);text-decoration:none;">twpark@stanford.edu</a>
+        <div style="margin-top:14px; color:#fff; font-size:0.75rem;">Built with the help of large language models and agentic AI workflows.</div>
+    </footer>
+
+    <script src="squeeze.js"></script>
 </body>
 </html>

@@ -3,51 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Blog | Taewon Park</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;800&family=Playfair+Display:ital,wght@0,400;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <title>Personal | Taewon Park</title>
+    <link rel="icon" id="favicon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+M8AAAMBAQDJ/pLvAAAAAElFTkSuQmCC">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;800&family=Playfair+Display:ital,wght@0,400;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #000; color: #fff; font-family: 'Inter', sans-serif; margin: 0; padding: 80px 40px; line-height: 1.6; }
-        .nav-back { font-family: 'Cinzel', serif; letter-spacing: 3px; text-decoration: none; color: #0071bc; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; }
-        
-        .container { max-width: 1000px; margin: 60px auto; }
-        h1 { font-family: 'Playfair Display', serif; font-size: 4rem; font-weight: 400; border-bottom: 1px solid #333; padding-bottom: 40px; margin-bottom: 60px; }
-        
+        :root { --accent:#0071bc; --muted:#a0a0a0; --line:rgba(255,255,255,0.1); }
+        * { box-sizing: border-box; }
+        body { background-color: #0a0a0a; color: #fff; font-family: 'Inter', sans-serif; margin: 0; padding: 50px 6vw; line-height: 1.7; }
+        .nav-back { font-family: 'Cinzel', serif; letter-spacing: 3px; text-decoration: none; color: var(--accent); font-weight: 800; font-size: 0.8rem; text-transform: uppercase; }
+        .container { max-width: 820px; margin: 50px auto; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 3.4rem; font-weight: 400; margin-bottom: 16px; }
+        .intro { font-family: 'Cinzel', serif; letter-spacing: 3px; color: #666; text-transform: uppercase; font-size: 0.85rem; margin-bottom: 60px; }
+        p { color: #d4d4d4; }
+
+        .accent-blue { color: var(--accent); font-weight: 800; font-family: 'Cinzel', serif; letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; display: block; margin-bottom: 24px; }
         .reading-list { list-style: none; padding: 0; }
-        .reading-list li { 
-            margin-bottom: 15px; 
-            font-size: 1.1rem; 
-            color: #ccc; 
-            padding-left: 20px; 
-            border-left: 2px solid #0071bc; 
-        }
-        
-        .accent-blue { color: #0071bc; font-weight: 800; font-family: 'Cinzel', serif; letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; }
+        .reading-list li { margin-bottom: 14px; font-size: 1.05rem; color: #ccc; padding: 6px 0 6px 22px; border-left: 2px solid var(--accent); }
+        .section { margin-bottom: 70px; }
     </style>
 </head>
 <body>
-    <a href="index.html" class="nav-back">← Back to Profile</a>
+    <a href="index.html" class="nav-back">&larr; Back to Profile</a>
 
     <div class="container">
-        <h1>Personal Blog</h1>
-        <p style="font-family: 'Cinzel', serif; letter-spacing: 3px; color: #666; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 60px;">
-            Thoughts and scribbles about interests beyond the lab.
-        </p>
+        <h1>Personal</h1>
+        <p class="intro">Thoughts and scribbles about interests beyond the lab</p>
 
-        <div style="margin-bottom: 40px;">
-            <span class="accent-blue">Current Reflections</span>
+        <div class="section">
+            <p>
+                Outside of photonics, I think a lot about creativity, science as a worldview, and how to build a
+                meaningful life. This corner of the site is a slower, more personal counterpart to my
+                <a href="blog-science.html" style="color:#fff;text-decoration:underline;text-decoration-color:var(--accent);">research writing</a> &mdash;
+                reflections, reading notes, and the occasional half-formed idea. More to come.
+            </p>
         </div>
-        
-        <p style="color: #ccc; font-style: italic; margin-bottom: 30px;">
-            Check back soon for updates! I am currently reflecting on the following works:
-        </p>
 
-        <ul class="reading-list">
-            <li>Living the creative life (formerly living the classical life)</li>
-            <li>The beginning of infinity</li>
-            <li>Abundance</li>
-            <li>When everyone knows that everyone knows</li>
-            <li>Remarkably bright creatures</li>
-        </ul>
+        <div class="section">
+            <span class="accent-blue">More to Come</span>
+            <p style="color:#888; font-style:italic;">Writing in progress — check back soon.</p>
+        </div>
+
+        <!-- Hidden for now (may bring back later):
+        <div class="section">
+            <span class="accent-blue">Currently Reading &amp; Reflecting On</span>
+            <ul class="reading-list">
+                <li>Living the Creative Life (formerly Living the Classical Life)</li>
+                <li>The Beginning of Infinity &mdash; David Deutsch</li>
+                <li>Abundance</li>
+                <li>When Everyone Knows That Everyone Knows&hellip; (common knowledge &amp; coordination)</li>
+                <li>Remarkably Bright Creatures</li>
+            </ul>
+        </div>
+        -->
     </div>
+    <script src="squeeze.js"></script>
 </body>
 </html>

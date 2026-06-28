@@ -6,7 +6,7 @@
  * Drives the header logo (#squeezeLogo, where present) and the animated favicon.
  */
 (function () {
-    var COLOR = '#224f8a'; // a refined navy blue for the data points
+    var COLOR = '#213e72'; // a deeper navy blue for the data points
 
     function gauss() { // Box–Muller
         var u = 0, v = 0;
@@ -59,7 +59,7 @@
             c.width = W * dpr; c.height = H * dpr;
             c.style.width = W + 'px'; c.style.height = H + 'px';
             var ctx = c.getContext('2d'); ctx.scale(dpr, dpr);
-            var logoStep = makeSqueeze(ctx, W, H, { N: 130, r: 1.8, speed: 0.4, rate: 0.02 });
+            var logoStep = makeSqueeze(ctx, W, H, { N: 130, r: 1.8, speed: 0.4, rate: 0.02, sigNarrow: 0.11 });
             (function loop() { logoStep(); requestAnimationFrame(loop); })();
         }
 
